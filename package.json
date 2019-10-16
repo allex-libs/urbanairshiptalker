@@ -1,0 +1,22 @@
+{
+  "name": "allex_urbanairshiptalkerlib",
+  "version": "1.0.0",
+  "description": "Library that encapsulates communication with Urban Airship API",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allex-libs/urbanairshiptalker.git"
+  },
+  "keywords": [
+    "ecosystem:AllexJS"
+  ],
+  "author": "HERS Belgrade",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/allex-libs/urbanairshiptalker/issues"
+  },
+  "homepage": "https://github.com/allex-libs/urbanairshiptalker#readme"
+}
