@@ -1,5 +1,6 @@
 function createLib (execlib) {
-  execlib.loadDependencies('client', ['allex:urbanairshiptalker:lib'], require('./libindex').bind(null, execlib));
+  return require('./libindex')(execlib);
+  //execlib.loadDependencies('client', ['allex:urbanairshiptalker:lib'], require('./libindex').bind(null, execlib));
 }   
       
 module.exports = createLib;
