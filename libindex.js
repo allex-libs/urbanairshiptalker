@@ -69,7 +69,7 @@ function createLib (execlib) {
   UATalker.prototype.createMasterAuthorizationString = function(){
     var ret = 'Basic ';
     var key = this.AppKey + ':' + this.AppMasterSecret;
-    var buff = new Buffer(key);
+    var buff = Buffer.alloc(key);
     var base64key = buff.toString('base64');
     ret += base64key;
     return ret;

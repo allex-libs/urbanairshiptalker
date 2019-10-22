@@ -29,11 +29,9 @@ function createLib (execlib) {
     }else{
       this.Endpoint = EU_Endpoint;
     }
-    this.channel_id = config.channel_id;
   }
 
   UATalker.prototype.destroy = function(){
-    this.channel_id = null;
     this.Endpoint = null;
     this.AppMasterSecret = null;
     this.AppSecret = null;
@@ -79,7 +77,7 @@ function createLib (execlib) {
   UATalker.prototype.createMasterAuthorizationString = function(){
     var ret = 'Basic ';
     var key = this.AppKey + ':' + this.AppMasterSecret;
-    var buff = new Buffer(key);
+    var buff = Buffer.alloc(key);
     var base64key = buff.toString('base64');
     ret += base64key;
     return ret;
@@ -88,9 +86,15 @@ function createLib (execlib) {
   //TODO checks and polishing
   UATalker.prototype.createParamObj = function(params){
     return {
-      audience: params.audience,
-      notification: params.notification,
-      device_types: params.device_types
+      audience: {
+        channel : params.channel_id
+      },
+      notification: {
+        alert : params.notification_msg
+      },
+      device_types: [
+        'web'
+      ]
     };
   };
 
