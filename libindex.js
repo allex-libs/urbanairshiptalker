@@ -21,11 +21,9 @@ function createLib (execlib) {
     }else{
       this.Endpoint = EU_Endpoint;
     }
-    this.channel_id = config.channel_id;
   }
 
   UATalker.prototype.destroy = function(){
-    this.channel_id = null;
     this.Endpoint = null;
     this.AppMasterSecret = null;
     this.AppSecret = null;
