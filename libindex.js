@@ -78,9 +78,15 @@ function createLib (execlib) {
   //TODO checks and polishing
   UATalker.prototype.createParamObj = function(params){
     return {
-      audience: params.audience,
-      notification: params.notification,
-      device_types: params.device_types
+      audience: {
+        channel : params.channel_id
+      },
+      notification: {
+        alert : params.notification_msg
+      },
+      device_types: [
+        'web'
+      ]
     };
   };
 
