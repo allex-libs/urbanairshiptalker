@@ -15,12 +15,7 @@ function createLib (execlib) {
     this.AppKey = config.AppKey;
     this.AppSecret = config.AppSecret;
     this.AppMasterSecret = config.AppMasterSecret;
-    this.Endpoint = null;
-    if (!!config.Use_NA_Endpoint){
-      this.Endpoint = NA_Endpoint;
-    }else{
-      this.Endpoint = EU_Endpoint;
-    }
+    this.Endpoint = 'https://go.urbanairship.com'; //Using NA only, EU did not work for some reason
   }
 
   UATalker.prototype.destroy = function(){
@@ -52,7 +47,7 @@ function createLib (execlib) {
 	*/
   UATalker.prototype.pushNotification = function(params){
     var d = q.defer();
-    lib.request(this.Endpoint, {
+    lib.request(this.Endpoint + '/api/push', {
       headers: {
         Authorization: this.createMasterAuthorizationString(),
         Accept: AcceptHeaderString,
