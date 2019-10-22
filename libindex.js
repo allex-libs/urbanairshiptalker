@@ -86,12 +86,10 @@ function createLib (execlib) {
   };
 
   UATalker.prototype.onPushNotificationComplete = function(defer, result){
-    console.log('Push Notification - Success', result);
     defer.resolve(result);
   };
 
   UATalker.prototype.onPushNotificationError = function(defer,error){
-    console.log('Push Notification - Error', error);
     defer.reject(new lib.Error('PUSH_NOTIFICATION_ERROR', error))
   };
 
